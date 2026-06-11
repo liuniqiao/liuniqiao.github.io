@@ -1,5 +1,9 @@
+const e = document.createElement("h1");
+e.id = "congrats";
+document.querySelector("body").appendChild(e);
+
 const update = () => {
-  const congrats = document.querySelector("#congrats");
+  const congrats = e;
   if (!congrats) return;
 
   const now = new Date();
