@@ -6,8 +6,9 @@ const update = () => {
   const currentYear = now.getFullYear();
   const birthdayThisYear = new Date(currentYear, 5, 16); // June = month 5
 
+
   // Today is birthday
-  if (true || now.toDateString() === birthdayThisYear.toDateString()) {
+  if (now.toDateString() === birthdayThisYear.toDateString()) {
     congrats.innerHTML = `
       Today is ${now.toLocaleDateString("en-US")} 
       <br>
