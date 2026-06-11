@@ -4,7 +4,6 @@ document.querySelector("body").appendChild(e);
 
 const update = () => {
   const congrats = e;
-  if (!congrats) return;
 
   const now = new Date();
   const currentYear = now.getFullYear();
