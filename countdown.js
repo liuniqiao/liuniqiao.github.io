@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
       // Today is birthday
-      if (now.toDateString() === birthdayThisYear.toDateString()) {
+      if (true || now.toDateString() === birthdayThisYear.toDateString()) {
         congrats.innerHTML = `
           Today is ${now.toLocaleDateString("en-US")} 
           <br>
