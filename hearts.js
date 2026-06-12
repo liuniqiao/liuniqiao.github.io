@@ -1,9 +1,10 @@
-function createHeart() {
+const hearts = ["💗", "🥝", "😽", "😘", "💖", "💘", "💕", "💝", "❤️", "❣️"];
+function createHeart(manual) {
   const heart = document.createElement('div');
   heart.classList.add('heart');
-  heart.textContent = '💖';
+  heart.textContent = manual ? "🤌" : hearts[Math.floor(Math.random() * hearts.length)];
   
-  heart.style.top = "3px";
+  heart.style.top = "2px";
   heart.style.left = Math.random() * 100 + 'vw';
   
   const size = Math.random() * 1.7 + 0.8;
@@ -17,20 +18,16 @@ function createHeart() {
   const drift = Math.random() * 80 - 40;
   heart.style.setProperty('--drift', drift + 'vw');
 
-  heart.style.transform = `rotate(${Math.random() * 30 - 15}deg)`;
+  heart.style.transform = `rotate(${Math.random() * 180 - 15}deg)`;
 
   document.body.appendChild(heart);
 
   setTimeout(() => {
     heart.remove();
-  }, (duration + 2) * 1000);
+  }, (duration + 1) * 1000);
 }
 
-setInterval(() => {
-  for (let i = 0; i < 3; i++) {  // 3 hearts per interval for denser rain
-    createHeart();
-  }
-}, 300);
+setInterval(createHeart, 100);
 
 for (let i = 0; i < 10; i++) {
   setTimeout(() => {
@@ -40,6 +37,6 @@ for (let i = 0; i < 10; i++) {
 
 document.addEventListener('click', (e) => {
   for (let i = 0; i < 15; i++) {
-    createHeart();
+    createHeart(true);
   }
 });
